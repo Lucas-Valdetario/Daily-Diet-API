@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
-from models.snack import Snack, db  # Importando o modelo e db
+from models.snack import Snack, db 
 
 app = Flask(__name__)
 
 # Configuração do Banco de Dados
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///snacks.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = "your_secret_key"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin123@127.0.0.1:3306/Daily-Diet-App'
 
 # Inicializando o banco de dados
 db.init_app(app)
